@@ -3,13 +3,13 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-use Symfony\Component\Console\Application;
+$dotenv = new Dotenv\Dotenv(__DIR__);
+$application = new Symfony\Component\Console\Application('Bank Reconciling Tool', 'v1.0.0');
 
-$application = new Application('Bank Reconciling Tool', 'v1.0.0');
-
-$application->add(new \Edcs\Reconciler\Commands\Reconcile());
+$application->add(new Edcs\Reconciler\Commands\Reconcile());
 
 try {
+    $dotenv->load();
     $application->run();
 } catch (Exception $ex) {
     exit(1);
