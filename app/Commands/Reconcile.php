@@ -2,6 +2,7 @@
 
 namespace Edcs\Reconciler\Commands;
 
+use duncan3dc\Laravel\Dusk;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -17,6 +18,8 @@ class Reconcile extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln('Whoa!');
+        $dusk = new Dusk();
+
+        $dusk->visit('https://www.google.co.uk');
     }
 }
