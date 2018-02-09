@@ -7,4 +7,10 @@ use Symfony\Component\Console\Application;
 
 $application = new Application('Bank Reconciling Tool', 'v1.0.0');
 
-$application->run();
+$application->add(new \Edcs\Reconciler\Commands\Reconcile());
+
+try {
+    $application->run();
+} catch (Exception $ex) {
+    exit(1);
+}

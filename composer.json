@@ -1,6 +1,16 @@
 {
+    "name": "edcs/reconciler",
+    "description": "Automated bank reconciliation tool",
+    "license": "MIT",
+    "type": "project",
     "require": {
+        "php": ">=7.0.0",
         "duncan3dc/dusk": "^0.6.0",
         "symfony/console": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Edcs\\Reconciler\\": "app/"
+        }
     }
 }
