@@ -1,0 +1,5 @@
+{
+    "require": {
+        "duncan3dc/dusk": "^0.6.0"
+    }
+}
